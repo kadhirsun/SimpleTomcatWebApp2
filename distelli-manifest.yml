@@ -31,7 +31,7 @@ kadhirsun/SimpleTomcatWebApp2:
     ### Docker Pre Install Commands ###
     # sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" $DISTELLI_DOCKER_ENDPOINT
     # docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
-    - docker login -u "%DISTELLI_DOCKER_USERNAME%" -p "%DISTELLI_DOCKER_PW%" -e "%DISTELLI_DOCKER_EMAIL%" "%DISTELLI_DOCKER_ENDPOINT%"
+    - D:\Software\Cloud\Docker\DockerToolbox\docker login -u "%DISTELLI_DOCKER_USERNAME%" -p "%DISTELLI_DOCKER_PW%" -e "%DISTELLI_DOCKER_EMAIL%" "%DISTELLI_DOCKER_ENDPOINT%"
     ### End Docker Pre Install Commands ###
 
   PostInstall:
@@ -49,5 +49,5 @@ kadhirsun/SimpleTomcatWebApp2:
     #- sudo docker run --name=$cid --rm=true $DISTELLI_DOCKER_PORTS  "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM" &
     #- wait
     #- 'true'
-     - docker run --rm=true $DISTELLI_DOCKER_PORTS "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
+     - D:\Software\Cloud\Docker\DockerToolbox\docker run --rm=true $DISTELLI_DOCKER_PORTS "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
      
