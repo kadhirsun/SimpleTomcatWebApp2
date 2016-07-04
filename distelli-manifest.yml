@@ -23,15 +23,15 @@ kadhirsun/SimpleTomcatWebApp2:
     - './target/*.war'
 
   PreInstall:
-    - echo "DD_USERNAME- $DISTELLI_DOCKER_USERNAME"
-    - echo "DD_EMAIL-    $DISTELLI_DOCKER_EMAIL"
-    - echo "DD_ENDPOINT- $DISTELLI_DOCKER_ENDPOINT"
-    # echo "Distelli Docker Username  $DISTELLI_DOCKER_USERNAME"    
+    - echo "DD_USERNAME- %DISTELLI_DOCKER_USERNAME%"
+    - echo "DD_EMAIL-    %DISTELLI_DOCKER_EMAIL%"
+    - echo "DD_ENDPOINT- %DISTELLI_DOCKER_ENDPOINT%"
+    - echo "Distelli Docker Username  %DISTELLI_DOCKER_USERNAME%"    
     # echo "DD_PORTS-    $DISTELLI_DOCKER_PORTS"    
     ### Docker Pre Install Commands ###
     # sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" $DISTELLI_DOCKER_ENDPOINT
     # docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
-    - docker.exe login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
+    - docker login -u "%DISTELLI_DOCKER_USERNAME%" -p "%DISTELLI_DOCKER_PW%" -e "%DISTELLI_DOCKER_EMAIL%" "%DISTELLI_DOCKER_ENDPOINT%"
     ### End Docker Pre Install Commands ###
 
   PostInstall:
@@ -49,5 +49,5 @@ kadhirsun/SimpleTomcatWebApp2:
     #- sudo docker run --name=$cid --rm=true $DISTELLI_DOCKER_PORTS  "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM" &
     #- wait
     #- 'true'
-     #- "C:\Program Files\Docker Toolbox\docker" run --rm=true $DISTELLI_DOCKER_PORTS "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
+     - docker run --rm=true $DISTELLI_DOCKER_PORTS "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
      
