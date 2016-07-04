@@ -26,11 +26,11 @@ kadhirsun/SimpleTomcatWebApp2:
     - echo "DD_USERNAME- $DISTELLI_DOCKER_USERNAME"
     - echo "DD_EMAIL-    $DISTELLI_DOCKER_EMAIL"
     - echo "DD_ENDPOINT- $DISTELLI_DOCKER_ENDPOINT"
-    #- echo "Distelli Docker Username  $DISTELLI_DOCKER_USERNAME"    
-    #- echo "DD_PORTS-    $DISTELLI_DOCKER_PORTS"    
+    # echo "Distelli Docker Username  $DISTELLI_DOCKER_USERNAME"    
+    # echo "DD_PORTS-    $DISTELLI_DOCKER_PORTS"    
     ### Docker Pre Install Commands ###
-    #- sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" $DISTELLI_DOCKER_ENDPOINT
-    #- docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
+    # sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" $DISTELLI_DOCKER_ENDPOINT
+    # docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
     - "C:\Program Files\Docker Toolbox\docker" login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
     ### End Docker Pre Install Commands ###
 
@@ -38,7 +38,7 @@ kadhirsun/SimpleTomcatWebApp2:
     - publicip=$(curl -s ident.me) 
     - echo "Public IP $publicip"
     - copy /Y .\target\*.war %CATALINA_HOME%\webapps\    
-    #- sudo service tomcat7 restart
+    # sudo service tomcat7 restart
     - echo ""
     - 'echo "You can validate the install by pointing your browser at http://$publicip/SimpleTomcatWebApp2"'
     - echo ""
